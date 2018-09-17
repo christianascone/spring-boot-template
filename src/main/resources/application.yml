@@ -1,0 +1,30 @@
+spring:
+    profiles: test
+    datasource:
+        url: jdbc:postgresql://localhost:5433/spring
+        #url: jdbc:h2:mem:testdb
+        username: postgres
+        password: postgres
+        driver-class-name: org.postgresql.Driver
+        #driver-class-name: org.h2.Driver
+    jpa:
+        properties:
+            javax:
+                persistence:
+                    schema-generation:
+                        create-source: metadata
+                        scripts:
+                            action: create
+                            create-target: create.sql
+    flyway:
+        locations: classpath:/db/migration,classpath:/dev/db/migration
+cloud:
+    aws:
+        region:
+            static: eu-west-1
+
+name: test-YAML
+environment: test
+servers: 
+    - www.abc.test.com
+    - www.xyz.test.com
