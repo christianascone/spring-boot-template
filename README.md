@@ -56,9 +56,12 @@ npm test
 - Flyway
 - JpaRepository
 - Docker configuration
-- Vaadin
 - Spring security
 - Hot deploy with versioning
+- Firebase push notifications
+- Jackson
+- Log4j
+- Stripe
 
 ## Meta
 
